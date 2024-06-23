@@ -20,5 +20,6 @@ def index():
 
         return redirect('/facts')
 
-    return render_template('facts/index.html')
+    all_facts = models.Fact.query.all()
+    return render_template('facts/index.html', facts=all_facts)
 
